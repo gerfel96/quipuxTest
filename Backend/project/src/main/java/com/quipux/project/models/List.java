@@ -9,9 +9,11 @@ public class List {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(unique = true, nullable = false)
     private Long list_id;
     
-    private String list_name;
+    @Column(nullable = false)
+    private String listName;
 
    
 
@@ -28,9 +30,9 @@ public class List {
     public List() {
     }
 
-    public List(Long list_id, String list_name, Set<Song> songs) {
+    public List(Long list_id, String listName, Set<Song> songs) {
         this.list_id = list_id;
-        this.list_name = list_name;
+        this.listName = listName;
         this.songs = songs;
     }
 
@@ -46,12 +48,12 @@ public class List {
         this.list_id = list_id;
     }
 
-    public String getList_name() {
-        return list_name;
+    public String getListName() {
+        return listName;
     }
 
-    public void setList_name(String list_name) {
-        this.list_name = list_name;
+    public void setListName(String listName) {
+        this.listName = listName;
     }
 
     public Set<Song> getSongs() {
@@ -91,7 +93,7 @@ public class List {
 
     @Override
     public String toString() {
-        return "List [list_id=" + list_id + ", list_name=" + list_name + ", songs=" + songs + "]";
+        return "List [list_id=" + list_id + ", listName=" + listName + ", songs=" + songs + "]";
     }
     
     

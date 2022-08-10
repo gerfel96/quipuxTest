@@ -9,12 +9,21 @@ public class Song {
    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(unique = true, nullable = false)
     private Long song_id;
-    private String song_name;
-    private String song_artist;
-    private String song_album;
-    private String song_anno;
 
+    @Column(nullable = false)
+    private String song_name;
+
+    @Column(nullable = false)
+    private String song_artist;
+
+    @Column(nullable = false)
+    private String song_album;
+
+    @Column(nullable = false)
+    private String song_anno;
+    
     //Constructors
 
     public Song() {
