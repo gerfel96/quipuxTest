@@ -1,4 +1,4 @@
-package com.quipox.project.Entity;
+package com.quipux.project.models;
 
 import javax.persistence.*;
 
